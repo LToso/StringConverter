@@ -1,0 +1,121 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    background: var(--dark);
+    font-family: Manrope, sans-serif;
+}
+
+.site-wraper {
+    width: 100%;
+}
+
+.site-center {
+    width: 60%;
+    margin: auto;
+    padding: 20px 20px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    margin: 0px 0px 30px 0px;
+}
+
+.logo {
+    font-size: 16px;
+    color: var(--main);
+    font-weight: bold;
+}
+
+.language-selector {
+    display: flex;
+    gap: 10px;
+}
+
+.language-selector img {
+    width: 26px;
+    height: 26px;
+    cursor: pointer;
+}
+
+.text-wraper {
+    width: 100%;
+}
+
+textarea {
+    height: 300px;
+    width: 98%;
+    border-radius: 5px;
+    background-color: var(--darker);
+    border-color: var(--main);
+    color: var(--main);
+    padding: 10px;
+    font-size: 14px;
+    resize: none;
+}
+
+.text-count {
+    color: var(--main);
+    font-size: 12px;
+    display: flex;
+    margin-bottom: 10px;
+    gap: 15px;
+    justify-content: end;
+}
+
+.text-options {
+    margin: 10px 0px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: space-evenly;
+}
+
+.text-option {
+    color: var(--main);
+    border: 1px solid var(--main);
+    border-radius: 3px;
+    padding: 5px 10px;
+    min-width: 122px;
+    max-width: 122px;
+    text-align: center;
+    font-size: 13px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.text-option-sel {
+    background-color: var(--main);
+    color: var(--darker);
+    border: 1px solid var(--main);
+    border-radius: 3px;
+    padding: 5px 10px;
+    min-width: 122px;
+    max-width: 122px;
+    text-align: center;
+    font-size: 13px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* Media Query for Mobile Devices */
+@media (max-width: 480px) {
+    .site-center {
+        width: 85%;
+    }
+
+    textarea {
+        width: 93%;
+    }
+}
+
+/* Media Query for low resolution  Tablets, Ipads */
+@media (min-width: 481px) and (max-width: 767px) {
+    .projects-container {
+        width: 85%;
+    }
+
+    textarea {
+        width: 93%;
+    }
+}
