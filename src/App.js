@@ -18,21 +18,21 @@ function App() {
         setText(value.toString().toLowerCase());
         break;
       case 'CAP':
-        var arr = text.toLowerCase().split(' ');
+        var arr = value.toLowerCase().split(' ');
         for (var i = 0; i < arr.length; i++)
           arr[i] = arr[i].charAt(0).toUpperCase() + arr[i].slice(1);
         setText(arr.join(' '));
         break;
       case 'ALT':
         ul = false;
-        setText(text.toLowerCase().split('').map(letter => letter.match(/[a-zA-ZáàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ]/) != null ? (ul = !ul, ul ? letter.toUpperCase() : letter.toLowerCase()) : letter).join(''));
+        setText(value.toLowerCase().split('').map(letter => letter.match(/[a-zA-ZáàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ]/) != null ? (ul = !ul, ul ? letter.toUpperCase() : letter.toLowerCase()) : letter).join(''));
         break;
       case 'INV':
         ul = true;
-        setText(text.toLowerCase().split('').map(letter => letter.match(/[a-zA-ZáàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ]/) != null ? (ul = !ul, ul ? letter.toUpperCase() : letter.toLowerCase()) : letter).join(''));
+        setText(value.toLowerCase().split('').map(letter => letter.match(/[a-zA-ZáàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ]/) != null ? (ul = !ul, ul ? letter.toUpperCase() : letter.toLowerCase()) : letter).join(''));
         break;
       case 'FLI':
-        setText(text.split("").reverse().join(""));
+        setText(value.split("").reverse().join(""));
         break;
     }
   }
@@ -77,7 +77,7 @@ function App() {
             <span>{translate('countWord', language) + counter('word')}</span>
             <span>{translate('countLine', language) + counter('line')}</span>
           </div>
-          <textarea value={text} onChange={(e) => change(e.target.value)} />
+          <textarea value={text} onChange={(e) => change(e.target.value, option)} />
           <div className='text-options'>
             <span className={option === "UPP" ? 'text-option-sel' : 'text-option'} onClick={() => menu('UPP')}>{translate('upper', language)}</span>
             <span className={option === "LOW" ? 'text-option-sel' : 'text-option'} onClick={() => menu('LOW')}>{translate('lower', language)}</span>
